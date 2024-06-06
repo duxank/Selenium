@@ -14,5 +14,99 @@
 
 <p>If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".</p>
 
+
+
+
+				
+<section id="login">
+	<h2>Test login</h2>
+	<ul>
+		<li>This is a simple Login page. Students can use this page to practice writing simple positive and negative LogIn tests. Login functionality is something that most of the test automation engineers need to automate.</li>
+		<li>Use next credentials to execute Login:
+		<br>Username: <b>student</b>
+		<br>Password: <b>Password123</b>
+		</li>
+	</ul>
+	<div id="form">
+		<div>
+			<label for="username">Username</label>
+			<input type="text" name="username" id="username">
+		</div>
+		<div>
+			<label for="password">Password</label>
+			<input type="password" name="password" id="password">
+		</div>
+		<button id="submit" class="btn">Submit</button>
+	</div>
+	<div id="error">Your username is invalid!</div>
+	<hr class="wp-block-separator">
+		<h5>Test case 1: Positive LogIn test</h5>
+		<ol>
+			<li>Open page</li>
+			<li>Type username <b>student</b> into Username field</li>
+			<li>Type password <b>Password123</b> into Password field</li>
+			<li>Push <b>Submit</b> button</li>
+			<li>Verify new page URL contains <b>practicetestautomation.com/logged-in-successfully/</b></li>
+			<!-- <li>Verify new page contains text 'Congratulations student. You successfully logged in!'</li> -->
+			<li>Verify new page contains expected text ('Congratulations' or 'successfully logged in')</li>
+			<li>Verify button <b>Log out</b> is displayed on the new page</li>
+		</ol>
+		<hr class="wp-block-separator">
+		<h5>Test case 2: Negative username test</h5>
+		<ol>
+			<li>Open page</li>
+			<li>Type username <b>incorrectUser</b> into Username field</li>
+			<li>Type password <b>Password123</b> into Password field</li>
+			<li>Push <b>Submit</b> button</li>
+			<li>Verify error message is displayed</li>
+			<li>Verify error message text is <b>Your username is invalid!</b></li>
+		</ol>
+		<hr class="wp-block-separator">
+		<h5>Test case 3: Negative password test</h5>
+		<ol>
+			<li>Open page</li>
+			<li>Type username <b>student</b> into Username field</li>
+			<li>Type password <b>incorrectPassword</b> into Password field</li>
+			<li>Push <b>Submit</b> button</li>
+			<li>Verify error message is displayed</li>
+			<li>Verify error message text is <b>Your password is invalid!</b></li>
+		</ol>
+	</section>
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			const username = document.querySelector("#username"),
+				password = document.querySelector("#password"),
+				submit = document.querySelector("#submit"),
+				error = document.querySelector("#error");
+
+			submit.addEventListener("click", function () {
+				let us_name = username.value,
+					us_pass = password.value;
+
+				if(us_name == "user" && us_pass == "Hello@12"){
+					window.location.href = "https://github.com/duxank/Selenium/logged-in-successfully";
+				}else if(us_name == "user" && us_pass != "test"){
+					error.innerHTML = "Your password is invalid!";
+					error.classList.add("show");
+					username.value = "";
+					password.value = "";
+				}else{
+					error.innerHTML = "Your username is invalid!";
+					error.classList.add("show");
+					username.value = "";
+					password.value = "";
+				}
+			})
+		})
+	</script>
+
+</section> <!-- .main-container -->
+
+
+
+
+
 </body>
+
+  
 </html>
