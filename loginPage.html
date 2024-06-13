@@ -263,9 +263,11 @@ span.psw {
   
       <div class="container">
         <label for="uname"><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="uname" id="username" required>
+        <input type="text" placeholder="Enter Username" name="uname" id="username">
+        <!-- <input type="text" placeholder="Enter Username" name="uname" id="username" required> -->
   
         <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" id="password">
         <input type="password" placeholder="Enter Password" name="psw" id="password" required>
           
         <button type="submit">Login</button>
@@ -301,12 +303,12 @@ span.psw {
 				error = document.querySelector("#error");
 
 			submit.addEventListener("click", function () {
-				let us_name = username.value,
-					us_pass = password.value;
+				let usernamefield = username.value,
+					passwordfield = password.value;
 
-				if(us_name == "student" && us_pass == "Password123"){
+				if(usernamefield == "student" && passwordfield == "Password123"){
 					window.location.href = "https://duxank.github.io/Selenium/loggedIn";
-				}else if(us_name == "student" && us_pass != "Password123"){
+				}else if(usernamefield == "student" && passwordfield != "Password123"){
 					error.innerHTML = "Your password is invalid!";
 					error.classList.remove("dk")
 					username.value = "";
