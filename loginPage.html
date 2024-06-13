@@ -308,12 +308,12 @@ span.psw {
 					window.location.href = "https://duxank.github.io/Selenium/loggedIn";
 				}else if(us_name == "student" && us_pass != "Password123"){
 					error.innerHTML = "Your password is invalid!";
-					error.classList.add("show");
+					error.classList.remove("dk")
 					username.value = "";
 					password.value = "";
 				}else{
 					error.innerHTML = "Your username is invalid!";
-					error.classList.add("block")
+					error.classList.remove("dk")
 					username.value = "";
 					password.value = "";
 				}
