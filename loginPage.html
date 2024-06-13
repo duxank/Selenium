@@ -305,10 +305,10 @@ span.psw {
 
 
   document.addEventListener("DOMContentLoaded", function () {
-			const username = document.querySelector("#username");
-			const	password = document.querySelector("#password");
-			const	submit = document.querySelector("#submit");
-			const	error = document.querySelector("#error");
+			let username = document.querySelector("#username");
+			let	password = document.querySelector("#password");
+			let	submit = document.querySelector("#submit");
+			let	error = document.querySelector("#error");
 
 			submit.addEventListener("click", function () {
         console.log("Login is clicked");
@@ -321,12 +321,14 @@ span.psw {
 					error.innerHTML = "Your password is invalid!";
           error.classList.remove("dk")
 					error.classList.add("dk2")
+          console.log("Flow 1");
 					username.value = "";
 					password.value = "";
 				}else{
 					error.innerHTML = "Your username is invalid!";
           error.classList.remove("dk")
 					error.classList.add("dk2")
+          console.log("Flow 2");
 					username.value = "";
 					password.value = "";
 				}
