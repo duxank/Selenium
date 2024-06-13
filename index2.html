@@ -30,6 +30,11 @@ body {
   background-color: #04AA6D;
   color: white;
 }
+
+.center {
+  text-align: center;
+  border: 3px solid green;
+}
 </style>
 </head>
 <body>
@@ -58,6 +63,20 @@ your browser will display an error message.</p>
 
   <br>
   <div id="form">
+		<div>
+			<label for="username">Username</label>
+			<input type="text" name="username" id="username">
+		</div>
+		<div>
+			<label for="password">Password</label>
+			<input type="password" name="password" id="password">
+		</div>
+		<button id="submit" class="btn">Submit</button>
+	</div>
+
+  <br>
+  <br>
+  <div class="center" id="form">
 		<div>
 			<label for="username">Username</label>
 			<input type="text" name="username" id="username">
