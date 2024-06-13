@@ -294,14 +294,14 @@ span.psw {
   
   <script>
   // Get the modal
-  var modal = document.getElementById('id01');
+  // var modal = document.getElementById('id01');
   
-  // When the user clicks anywhere outside of the modal, close it
-  window.onclick = function(event) {
-      if (event.target == modal) {
-          modal.style.display = "none";
-      }
-  }
+  // // When the user clicks anywhere outside of the modal, close it
+  // window.onclick = function(event) {
+  //     if (event.target == modal) {
+  //         modal.style.display = "none";
+  //     }
+  // }
 
 
   document.addEventListener("DOMContentLoaded", function () {
@@ -311,6 +311,7 @@ span.psw {
 				error = document.querySelector("#error");
 
 			submit.addEventListener("click", function () {
+        console.log("Login is clicked");
 				let usernamefield = username.value,
 					passwordfield = password.value;
 
