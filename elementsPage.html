@@ -51,7 +51,7 @@ body {
 
 .center {
   text-align: center;
-  border: 3px solid green;
+  /* border: 3px solid green; */
 }
 
 .left {
@@ -158,6 +158,18 @@ span.psw {
 }
 
 /* The Modal (background) */
+.dk {
+  display: none; /* Shown by default */
+  text-align: center;
+}
+
+.dk2 {
+  display: block; /* Shown by default */
+  text-align: center;
+  color: rgb(228, 17, 17);
+}
+
+/* The Modal (background) */
 .modal {
   display: block; /* Shown by default */
   position: fixed; /* Stay in place */
@@ -241,49 +253,90 @@ span.psw {
   <a href="https://duxank.github.io/Selenium/elementsPage.html">Elements</a>
 </div>
 
-<h2>MODAL LOGIN POPUP</h2>
-<p>Click Login button to open modal window.</p>
-
 
 <!-- <div id="id01" class="modal"> -->
   <div id="id01">
   
-    <form class="modal-content" action="/action_page.php" method="post">
+    <!-- <form class="modal-content" action="/action_page.php" method="post"> -->
+      <form class="modal-content" >
+        <div class="center">
+          <h2>Login Page</h2>
+          <p>Click Login button to open modal window.</p>
+          </div>
       <div class="imgcontainer">
-        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-        <img src="LoginIcon.jpg" alt="Login" class="avatar">
+        <!-- <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span> -->
+        <!-- <img src="LoginIcon.jpg" alt="Login" class="avatar"> -->
+        
       </div>
+
+      <div class='dk'  id="error">Your username is invalid!</div>
   
       <div class="container">
         <label for="uname"><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="uname" id="username" required>
+        <input type="text" placeholder="Enter Username" name="username" id="username">
+        <!-- <input type="text" placeholder="Enter Username" name="uname" id="username" required> -->
   
         <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" id="password" required>
+        <input type="password" placeholder="Enter Password" name="password" id="password">
+        <!-- <input type="password" placeholder="Enter Password" name="psw" id="password" required> -->
           
-        <button type="submit">Login</button>
+        <button type="button" id="submit">Login</button>
+        
         <label>
           <input type="checkbox" checked="checked" name="remember"> Remember me
         </label>
       </div>
   
       <div class="container" style="background-color:#f1f1f1">
-        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+        <!-- <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button> -->
         <span class="psw">Forgot <a href="#">password?</a></span>
       </div>
+      
     </form>
   </div>
   
   <script>
   // Get the modal
-  var modal = document.getElementById('id01');
+  // var modal = document.getElementById('id01');
   
-  // When the user clicks anywhere outside of the modal, close it
-  window.onclick = function(event) {
-      if (event.target == modal) {
-          modal.style.display = "none";
-      }
-  }
+  // // When the user clicks anywhere outside of the modal, close it
+  // window.onclick = function(event) {
+  //     if (event.target == modal) {
+  //         modal.style.display = "none";
+  //     }
+  // }
+
+
+  document.addEventListener("DOMContentLoaded", function () {
+			let username = document.querySelector("#username");
+			let	password = document.querySelector("#password");
+			let	submit = document.querySelector("#submit");
+			let	error = document.querySelector("#error");
+
+			submit.addEventListener("click", function () {
+        console.log("Login is clicked");
+				let usernamefield = username.value,
+					passwordfield = password.value;
+
+				if(usernamefield == "selenium" && passwordfield == "Asd123"){
+					window.location.href = "https://duxank.github.io/Selenium/logged-in";
+				}else if(usernamefield == "selenium" && passwordfield != "Asd123"){
+					error.innerHTML = "Your password is invalid!";
+          error.classList.remove("dk")
+					error.classList.add("dk2")
+          console.log("Flow 1");
+					username.value = "";
+					password.value = "";
+				}else{
+					error.innerHTML = "Your username is invalid!";
+          error.classList.remove("dk")
+					error.classList.add("dk2")
+          console.log("Flow 2");
+					username.value = "";
+					password.value = "";
+				}
+			})
+		})
   </script>
 
 
