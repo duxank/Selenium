@@ -49,6 +49,48 @@ body {
   color: white;
 }
 
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
 .center {
   text-align: center;
   /* border: 3px solid green; */
@@ -247,12 +289,23 @@ span.psw {
     <h1>SELENIUM PRACTICE</h1>
   </div>
 
-<div class="topnav">
-  <a href="https://duxank.github.io/Selenium">Home</a>
-   <a  href="https://duxank.github.io/Selenium/loginPage.html">Login</a>
-  <a  href="https://duxank.github.io/Selenium/elementsPage.html">Elements</a>
-  <a class="active" href="https://duxank.github.io/Selenium/exceptionsPage.html">Exceptions</a>
-</div>
+  <div class="topnav">
+    <a class="active" href="https://duxank.github.io/Selenium">Home</a>
+     <a href="https://duxank.github.io/Selenium/loginPage.html">Login</a>
+    <!-- <a href="https://duxank.github.io/Selenium/elementsPage.html">Elements</a> -->
+    <div class="dropdown">
+      <button class="dropbtn">Elements 
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="https://duxank.github.io/Selenium/elementsPage.html#Checkbox">Checkbox</a>
+        <a href="https://duxank.github.io/Selenium/elementsPage.html#Radio">Radio button</a>
+        <a href="https://duxank.github.io/Selenium/elementsPage.html#Dropdown">Dropdown</a>
+        <a href="https://duxank.github.io/Selenium/elementsPage.html#DynamicWebTables">Dynamic Web Table</a>
+      </div>
+    </div> 
+    <a href="https://duxank.github.io/Selenium/exceptionsPage.html">Exceptions</a>
+  </div>
 
 <div class="center">
   <h2>Exceptions Page</h2>
