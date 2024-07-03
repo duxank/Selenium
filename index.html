@@ -281,6 +281,39 @@ span.psw {
   }
 }
 
+
+
+.box {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.box :first-child {
+  align-self: center;
+  margin: 24px 0 12px 0;
+  color: lime;
+  background-color: black;
+  padding: 5px;
+}
+
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+}
+
+.flex-container > div {
+  background-color: white;
+  width: fit-content;
+  margin-left: 100px;
+  margin-right: 100px;
+  text-align: justify;
+  /* line-height: 75px; */
+  /* font-size: 30px; */
+}
+
 </style>
 
 
@@ -314,10 +347,37 @@ span.psw {
 
 
 <div class="center">
-  <h2>Home Page</h2>
-  <p>Welcome to the Course on Test Automation!.</p>
+  <h1>Home Page</h1>
+  <p>Welcome to the Course on Test Automation!</p>
   </div>
 
+
+<div class="flex-container">
+  <div></div>
+  <div>
+    <h2>Welcome</h2>
+    <p>
+      My name is Dusan, and I am delighted to welcome you to the comprehensive Selenium WebDriver test automation course. This course is designed to help you master the art of test automation using Selenium WebDriver, one of the most powerful tools available for automating web applications.</p>
+
+      <p>The purpose of this website is to provide a dedicated space where you can safely practice and hone your test automation skills without the risk of affecting live production sites. This way, you can experiment and learn in a controlled environment, gaining confidence and expertise in your abilities.</p>
+
+      <p>There are several pages available on this site, each designed to focus on a specific aspect of HTML and Selenium WebDriver:</p>
+
+<p>- Each page is dedicated to different HTML elements, allowing you to interact with and understand how Selenium WebDriver can be used to manipulate these elements effectively.</p>
+
+
+  <p>- You will encounter various Selenium exceptions, which will help you learn how to handle errors and exceptions that may arise during test automation.</p>
+    <p>- There are pages featuring dynamic content loading, such as AJAX, to help you practice dealing with real-time data updates and asynchronous requests.</p>
+
+<p>
+By exploring these pages and practicing with the exercises provided, you will build a solid foundation in test automation, preparing you for more advanced challenges and real-world applications.
+    </p>
+  </div>
+  <div>
+
+    
+  </div>  
+</div>
 
 
 
