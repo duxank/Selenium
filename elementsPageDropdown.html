@@ -378,60 +378,15 @@ span.psw {
 
      
         <div class="center">
-          <h2>Elements Page</h2>
+          <h1>Elements Page</h1>
           <p>Test interation with different web elements.</p>
           
 
-          <div class="container">
-
-          <p id="Checkbox">Link to checkbox.</p>
-          <div class="container">
-            <h1>Custom Checkboxes</h1>
-            <label class="container">One
-              <input type="checkbox" checked="checked">
-              <span class="checkmark"></span>
-            </label>
-            <label class="container">Two
-              <input type="checkbox">
-              <span class="checkmark"></span>
-            </label>
-            <label class="container">Three
-              <input type="checkbox">
-              <span class="checkmark"></span>
-            </label>
-            <label class="container">Four
-              <input type="checkbox">
-              <span class="checkmark"></span>
-            </label>
-          </div>
-
-
-          <p id="Radio">Link to radio button.</p>
-          <div class="container">
-          <h1>Custom Radio Buttons</h1>
-          <label class="container">One
-            <input type="radio" checked="checked" name="radio">
-            <span class="checkmark"></span>
-          </label>
-          <label class="container">Two
-            <input type="radio" name="radio">
-            <span class="checkmark"></span>
-          </label>
-          <label class="container">Three
-            <input type="radio" name="radio">
-            <span class="checkmark"></span>
-          </label>
-          <label class="container">Four
-            <input type="radio" name="radio">
-            <span class="checkmark"></span>
-          </label>
-        </div>
 
         <div class="container">
-          <p id="Dropdown">Link to hoverable dropdown.</p>
+                    
           
-          
-          <h1>Hoverable Dropdown</h1>
+          <h2>Hoverable Dropdown</h2>
         <p>Move the mouse over the button to open the dropdown menu.</p>
 
         
@@ -446,12 +401,11 @@ span.psw {
         
           
         </div>
-          
 
-          </div>
 
-          <p id="DynamicWebTables">Link to Dynamic tables.</p>
-        </div>
+   
+
+ 
       </div>
       
       
@@ -460,7 +414,26 @@ span.psw {
   
   <script>
 
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
 
+function filterFunction() {
+  const input = document.getElementById("myInput");
+  const filter = input.value.toUpperCase();
+  const div = document.getElementById("myDropdown");
+  const a = div.getElementsByTagName("a");
+  for (let i = 0; i < a.length; i++) {
+    txtValue = a[i].textContent || a[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      a[i].style.display = "";
+    } else {
+      a[i].style.display = "none";
+    }
+  }
+}
 
   </script>
 

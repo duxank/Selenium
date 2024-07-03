@@ -378,80 +378,37 @@ span.psw {
 
      
         <div class="center">
-          <h2>Elements Page</h2>
+          <h1>Elements Page</h1>
           <p>Test interation with different web elements.</p>
           
 
-          <div class="container">
-
-          <p id="Checkbox">Link to checkbox.</p>
-          <div class="container">
-            <h1>Custom Checkboxes</h1>
-            <label class="container">One
-              <input type="checkbox" checked="checked">
-              <span class="checkmark"></span>
-            </label>
-            <label class="container">Two
-              <input type="checkbox">
-              <span class="checkmark"></span>
-            </label>
-            <label class="container">Three
-              <input type="checkbox">
-              <span class="checkmark"></span>
-            </label>
-            <label class="container">Four
-              <input type="checkbox">
-              <span class="checkmark"></span>
-            </label>
-          </div>
 
 
-          <p id="Radio">Link to radio button.</p>
-          <div class="container">
-          <h1>Custom Radio Buttons</h1>
-          <label class="container">One
-            <input type="radio" checked="checked" name="radio">
-            <span class="checkmark"></span>
-          </label>
-          <label class="container">Two
-            <input type="radio" name="radio">
-            <span class="checkmark"></span>
-          </label>
-          <label class="container">Three
-            <input type="radio" name="radio">
-            <span class="checkmark"></span>
-          </label>
-          <label class="container">Four
-            <input type="radio" name="radio">
-            <span class="checkmark"></span>
-          </label>
-        </div>
 
-        <div class="container">
-          <p id="Dropdown">Link to hoverable dropdown.</p>
-          
-          
-          <h1>Hoverable Dropdown</h1>
-        <p>Move the mouse over the button to open the dropdown menu.</p>
+        <div class="container">       
+    
 
+        <h2>Search/Filter Dropdown</h2>
+        <p>Click on the button to open the dropdown menu, and use the input field to search for a specific dropdown link.</p>
         
         <div class="dropdown5">
-          <button class="dropbtn5">Dropdown</button>
-          <div class="dropdown-content5">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
+          <button onclick="myFunction()" class="dropbtn5">Dropdown</button>
+          <div id="myDropdown" class="dropdown-content5">
+            <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+            <a href="#about">About</a>
+            <a href="#base">Base</a>
+            <a href="#blog">Blog</a>
+            <a href="#contact">Contact</a>
+            <a href="#custom">Custom</a>
+            <a href="#support">Support</a>
+            <a href="#tools">Tools</a>
           </div>
         </div>
-        
-          
-        </div>
-          
 
-          </div>
 
-          <p id="DynamicWebTables">Link to Dynamic tables.</p>
-        </div>
+      </div> 
+
+
       </div>
       
       
@@ -460,7 +417,26 @@ span.psw {
   
   <script>
 
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
 
+function filterFunction() {
+  const input = document.getElementById("myInput");
+  const filter = input.value.toUpperCase();
+  const div = document.getElementById("myDropdown");
+  const a = div.getElementsByTagName("a");
+  for (let i = 0; i < a.length; i++) {
+    txtValue = a[i].textContent || a[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      a[i].style.display = "";
+    } else {
+      a[i].style.display = "none";
+    }
+  }
+}
 
   </script>
 
