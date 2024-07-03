@@ -442,47 +442,9 @@ span.psw {
   </div>
   
   <script>
-  // Get the modal
-  // var modal = document.getElementById('id01');
-  
-  // // When the user clicks anywhere outside of the modal, close it
-  // window.onclick = function(event) {
-  //     if (event.target == modal) {
-  //         modal.style.display = "none";
-  //     }
-  // }
 
 
-  document.addEventListener("DOMContentLoaded", function () {
-			let username = document.querySelector("#username");
-			let	password = document.querySelector("#password");
-			let	submit = document.querySelector("#submit");
-			let	error = document.querySelector("#error");
 
-			submit.addEventListener("click", function () {
-        console.log("Login is clicked");
-				let usernamefield = username.value,
-					passwordfield = password.value;
-
-				if(usernamefield == "selenium" && passwordfield == "Asd123"){
-					window.location.href = "https://duxank.github.io/Selenium/logged-in";
-				}else if(usernamefield == "selenium" && passwordfield != "Asd123"){
-					error.innerHTML = "Your password is invalid!";
-          error.classList.remove("dk")
-					error.classList.add("dk2")
-          console.log("Flow 1");
-					username.value = "";
-					password.value = "";
-				}else{
-					error.innerHTML = "Your username is invalid!";
-          error.classList.remove("dk")
-					error.classList.add("dk2")
-          console.log("Flow 2");
-					username.value = "";
-					password.value = "";
-				}
-			})
-		})
   </script>
 
 
