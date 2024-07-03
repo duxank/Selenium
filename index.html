@@ -304,15 +304,30 @@ span.psw {
   background-color: white;
 }
 
+
 .flex-container > div {
+  /* flex: 0 0 auto; */
   background-color: white;
   width: fit-content;
-  margin-left: 100px;
-  margin-right: 100px;
+  margin-left: 100px; 
+  margin-right: 100px; 
   text-align: justify;
   /* line-height: 75px; */
   /* font-size: 30px; */
 }
+
+.one {
+  flex: 1 1 0;
+}
+
+.two {
+  flex: 28 1 0;
+}
+
+.three {
+  flex: 1 1 0;
+}
+
 
 </style>
 
@@ -353,8 +368,8 @@ span.psw {
 
 
 <div class="flex-container">
-  <div></div>
-  <div>
+  <div class="one"></div>
+  <div class="two">
     <h2>Welcome</h2>
     <p>
       My name is Dusan, and I am delighted to welcome you to Selenium WebDriver test automation course. This course is designed to help you master the art of test automation using Selenium WebDriver, one of the most powerful tools available for automating web applications.</p>
@@ -373,7 +388,7 @@ span.psw {
 By exploring these pages and practicing with the exercises provided, you will build a solid foundation in test automation, preparing you for more advanced challenges and real-world applications.
     </p>
   </div>
-  <div>
+  <div class="three">
 
     
   </div>  
